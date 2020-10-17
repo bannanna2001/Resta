@@ -173,32 +173,40 @@ let subscriptionBtn = subscriptionForm.querySelector('button');
 
 function emailValidation(subscriptionInput, subscriptionLabel, isFull = false) {
     let regexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
-    if (regexp.test(subscriptionInput.value)) {
-        if (isFull) {
-            subscriptionInput.value = "";
-            subscriptionLabel.classList.remove('error-text');
-            subscriptionInput.classList.remove('error');
-            subscriptionLabel.classList.remove('valid-text');
-            subscriptionInput.classList.remove('valid');
-            subscriptionLabel.textContent = "Enter your email";
+    if (subscriptionInput.value !== "") {
+        if (regexp.test(subscriptionInput.value)) {
+            if (isFull) {
+                subscriptionInput.value = "";
+                subscriptionLabel.classList.remove('error-text');
+                subscriptionInput.classList.remove('error');
+                subscriptionLabel.classList.remove('valid-text');
+                subscriptionInput.classList.remove('valid');
+                subscriptionLabel.textContent = "Enter your email";
+            } else {
+                subscriptionLabel.classList.add('valid-text');
+                subscriptionInput.classList.add('valid');
+            }
         } else {
-            subscriptionLabel.classList.add('valid-text');
-            subscriptionInput.classList.add('valid');
-        }
-    } else {
-        let tmp = /.+@/;
-        if (!tmp.test(subscriptionInput.value)) {
-            subscriptionLabel.textContent = "Missing @ symbol";
-            subscriptionLabel.classList.add('error-text');
-            subscriptionInput.classList.add('error');
-        } else {
-            tmp = /.+@.+\..+/;
+            let tmp = /.+@/;
             if (!tmp.test(subscriptionInput.value)) {
-                subscriptionLabel.textContent = "Missing domain name";
+                subscriptionLabel.textContent = "Missing @ symbol";
                 subscriptionLabel.classList.add('error-text');
                 subscriptionInput.classList.add('error');
+            } else {
+                tmp = /.+@.+\..+/;
+                if (!tmp.test(subscriptionInput.value)) {
+                    subscriptionLabel.textContent = "Missing domain name";
+                    subscriptionLabel.classList.add('error-text');
+                    subscriptionInput.classList.add('error');
+                }
             }
         }
+    } else {
+        subscriptionLabel.classList.remove('error-text');
+        subscriptionInput.classList.remove('error');
+        subscriptionLabel.classList.remove('valid-text');
+        subscriptionInput.classList.remove('valid');
+        subscriptionLabel.textContent = "Enter your email";
     }
 }
 
