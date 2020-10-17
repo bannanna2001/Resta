@@ -65,3 +65,384 @@ select {
     scroll-behavior: auto !important;
   }
 }
+:root {
+  --mainPadding: 6rem 11% 3rem;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+}
+.header .header-back {
+  position: absolute;
+  z-index: -1;
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  background-color: #6FCF97;
+  padding: 2.5rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo img {
+  width: 98px;
+  height: 28px;
+}
+
+.nav {
+  width: 65%;
+  margin-right: 2rem;
+}
+.nav .nav-list {
+  display: flex;
+  flex-flow: row wrap;
+}
+.nav .nav-list .nav-list-item {
+  margin-right: 60px;
+}
+.nav .nav-list .nav-list-item:last-child {
+  margin-right: 0;
+}
+.nav .nav-list .nav-list-item a {
+  color: #fff;
+  font-size: 0.875rem;
+  text-decoration: none;
+  padding-bottom: 3px;
+}
+.nav .nav-list .nav-list-item a.drop {
+  padding-right: 1rem;
+  background: url("../img/drop.png") 100% 50% no-repeat;
+  background-size: 0.875rem;
+}
+.nav .nav-list .nav-list-item a.drop:hover {
+  border-bottom: 4px solid red;
+}
+.nav .nav-list .nav-list-item a:hover {
+  border-bottom: 4px solid darkorange;
+}
+.nav .nav-list .nav-list-item a.active {
+  border-bottom: 4px solid #6FCF97;
+}
+.nav .nav-list .nav-list-item.to-right {
+  margin-left: auto;
+}
+
+h1 {
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+  font-size: 2.875rem;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
+.main-btn {
+  background-color: #6FCF97;
+  border: none;
+  color: #fff;
+  padding: 1rem 4rem;
+}
+.main-btn.mini {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.secondaryBtn {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.secondaryBtn span {
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+}
+.secondaryBtn img {
+  width: 46.5px;
+  height: 46.5px;
+  margin-right: 1.2rem;
+}
+.tagline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 10rem;
+}
+.tagline h1 {
+  margin: 9rem 28% 3rem;
+}
+
+.recipe {
+  background-color: #EFFFF6;
+  padding: var(--mainPadding);
+  display: flex;
+  justify-content: space-between;
+}
+.recipe .recipe-text {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.recipe .recipe-text .recipe-title {
+  width: 70%;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #333;
+  margin-bottom: 3rem;
+}
+.recipe .recipe-text .recipe-desc {
+  color: #4F4F4F;
+  font-weight: 400;
+  font-size: 1.2rem;
+  line-height: 2;
+  width: 100%;
+  margin-bottom: 5.625rem;
+}
+.recipe .recipe-photo {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+.recipe .recipe-photo .recipe-photo-main {
+  width: 95%;
+  align-self: flex-end;
+}
+.recipe .recipe-photo .recipe-photo-mini {
+  width: 68%;
+  position: relative;
+  top: -10%;
+  left: -10%;
+  z-index: 2;
+}
+
+.block-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 4.25rem;
+  text-align: center;
+}
+
+.recomended {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--mainPadding);
+}
+.recomended .food-items {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.recomended .food-items .food-item {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.recomended .food-items .food-item .food-item-img {
+  width: 210px;
+  height: 210px;
+}
+.recomended .food-items .food-item .food-item-info {
+  width: calc(100% - 210px);
+  padding-left: 20px;
+  color: #000;
+}
+.recomended .food-items .food-item .food-item-info .food-item-name {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.recomended .food-items .food-item .food-item-info .food-item-desc {
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+.recomended .food-items .food-item .food-item-info .food-item-price {
+  color: #6FCF97;
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+}
+.recomended .food-items .food-item .food-item-info .food-item-price::before {
+  content: "$";
+}
+
+.gallery .gallery-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 12px;
+}
+
+.form-reservation {
+  padding: var(--mainPadding);
+}
+.form-reservation .reservation {
+  background-color: #6FCF97;
+  padding: 4.625rem 7rem;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+.form-reservation .reservation .form-title {
+  width: 100%;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 3.625rem;
+}
+.form-reservation .reservation .form-item {
+  width: 48%;
+  position: relative;
+}
+.form-reservation .reservation .form-item .form-input {
+  color: #fff;
+  width: 100%;
+  background-color: transparent;
+  border: 1px solid #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.form-reservation .reservation .form-item .form-input::placeholder {
+  color: #fff;
+}
+.form-reservation .reservation .form-item .form-input[type=date] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+.form-reservation .reservation .form-item select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+}
+.form-reservation .reservation .form-item select option {
+  width: 100%;
+}
+.form-reservation .reservation .form-item .drop-arrow {
+  content: url("../img/drop.png");
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  right: 10px;
+}
+.form-reservation .reservation .form-btn {
+  width: 100%;
+  background-color: #219653;
+  border: none;
+  padding: 20px;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+}
+.form-reservation .reservation .form-add-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.form-reservation .reservation .form-add-info .add-info {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.form-reservation .reservation .form-add-info .add-info-img {
+  width: 32px;
+  width: 52px;
+  margin-right: 1rem;
+}
+
+.footer {
+  padding: var(--mainPadding);
+  background-color: #333;
+  color: #fff;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+.footer a:hover {
+  text-decoration: underline;
+}
+.footer .link-item {
+  margin-bottom: 1rem;
+}
+.footer .footer-title {
+  color: #6FCF97;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 3.5rem;
+}
+.footer .footer-logo {
+  width: 172px;
+  height: 50px;
+}
+.footer .footer-info {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 4rem;
+}
+.footer .footer-info .footer-info-contacts {
+  width: 25%;
+}
+.footer .footer-info .footer-info-contacts p {
+  margin-bottom: 0.6rem;
+}
+.footer .footer-info .footer-info-subscription {
+  width: 40%;
+}
+.footer .footer-info .footer-info-subscription .subscription-form {
+  margin-bottom: 3rem;
+}
+.footer .footer-info .footer-info-subscription .subscription-form .subscription-field {
+  position: relative;
+}
+.footer .footer-info .footer-info-subscription .subscription-form .subscription-field input {
+  width: 70%;
+  padding: 1.1rem;
+  margin: 0;
+  background-color: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+}
+.footer .footer-info .footer-info-subscription .subscription-form .subscription-field input::placeholder {
+  color: #fff;
+}
+.footer .footer-info .footer-info-subscription .subscription-form .subscription-field button {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  width: 30%;
+  height: 100%;
+  margin: 0;
+  border: 1px solid #6FCF97;
+}
+.footer .footer-copy {
+  text-align: center;
+  padding-top: 2.5rem;
+}

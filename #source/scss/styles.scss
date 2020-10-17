@@ -1,1 +1,386 @@
 @import "reset";
+$mainGreen: #6FCF97;
+$lightGreen: #EFFFF6;
+$grey: #333;
+:root {
+    --mainPadding: 6rem 11% 3rem;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+body {
+    font-family: 'Open Sans', Arial, "Helvetica Neue", Helvetica, sans-serif;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header {
+    position: relative;
+    .header-back {
+        position: absolute;
+        z-index: -1;
+    }
+}
+
+.nav-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    background-color: $mainGreen;
+    padding: 2.5rem 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 98px;
+        height: 28px;
+    }
+}
+
+.nav {
+    width: 65%;
+    margin-right: 2rem;
+    .nav-list {
+        display: flex;
+        flex-flow: row wrap;
+        .nav-list-item {
+            margin-right: 60px;
+            &:last-child {
+                margin-right: 0;
+            }
+            a {
+                color: #fff;
+                font-size: .875rem;
+                text-decoration: none;
+                padding-bottom: 3px;
+                &.drop {
+                    padding-right: 1rem;
+                    background: url('../img/drop.png') 100% 50% no-repeat;
+                    background-size: 0.875rem;
+                    &:hover {
+                        border-bottom: 4px solid red;
+                    }
+                }
+                &:hover {
+                    border-bottom: 4px solid darkorange;
+                }
+                &.active {
+                    border-bottom: 4px solid $mainGreen;
+                }
+            }
+            &.to-right {
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+    font-size: 2.875rem;
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
+.main-btn {
+    background-color: $mainGreen;
+    border: none;
+    color: #fff;
+    padding: 1rem 4rem;
+    &:hover {}
+    &.mini {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.secondaryBtn {
+    background-color: $grey;
+    border: none;
+    color: #fff;
+    padding: 1.2rem;
+    display: flex;
+    align-items: center;
+    span {
+        font-size: 1.1rem;
+        font-weight: 600;
+        letter-spacing: .7px;
+    }
+    img {
+        width: 46.5px;
+        height: 46.5px;
+        margin-right: 1.2rem;
+    }
+    &:hover {}
+}
+
+.tagline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10rem;
+    h1 {
+        margin: 9rem 28% 3rem;
+    }
+}
+
+.recipe {
+    background-color: $lightGreen;
+    padding: var(--mainPadding);
+    display: flex;
+    justify-content: space-between;
+    .recipe-text {
+        width: 50%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .recipe-title {
+            width: 70%;
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: .5px;
+            color: $grey;
+            margin-bottom: 3rem;
+        }
+        .recipe-desc {
+            color: #4F4F4F;
+            font-weight: 400;
+            font-size: 1.2rem;
+            line-height: 2;
+            width: 100%;
+            margin-bottom: 5.625rem;
+        }
+    }
+    .recipe-photo {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        .recipe-photo-main {
+            width: 95%;
+            align-self: flex-end;
+        }
+        .recipe-photo-mini {
+            width: 68%;
+            position: relative;
+            top: -10%;
+            left: -10%;
+            z-index: 2;
+        }
+    }
+}
+
+.block-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 4.25rem;
+    text-align: center;
+}
+
+.recomended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--mainPadding);
+    .food-items {
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        .food-item {
+            width: 48%;
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            .food-item-img {
+                width: 210px;
+                height: 210px;
+            }
+            .food-item-info {
+                width: calc(100% - 210px);
+                padding-left: 20px;
+                color: #000;
+                .food-item-name {
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                }
+                .food-item-desc {
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                }
+                .food-item-price {
+                    color: $mainGreen;
+                    margin-top: 1.2rem;
+                    font-size: 1.5rem;
+                    &::before {
+                        content: "\0024 ";
+                    }
+                }
+            }
+        }
+    }
+}
+
+.gallery {
+    .gallery-items {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 12px;
+    }
+}
+
+.form-reservation {
+    padding: var(--mainPadding);
+    .reservation {
+        background-color: $mainGreen;
+        padding: 4.625rem 7rem;
+        display: flex;
+        justify-content: space-between;
+        flex-flow: row wrap;
+        .form-title {
+            width: 100%;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 3.625rem;
+        }
+        .form-item {
+            width: 48%;
+            position: relative;
+            .form-input {
+                color: #fff;
+                width: 100%;
+                background-color: transparent;
+                border: 1px solid #fff;
+                padding: 20px;
+                margin-bottom: 20px;
+                &::placeholder {
+                    color: #fff;
+                }
+                &[type='date'] {
+                    appearance: none;
+                }
+            }
+            select {
+                appearance: none;
+                position: relative;
+                option {
+                    width: 100%;
+                }
+            }
+            .drop-arrow {
+                content: url('../img/drop.png');
+                position: absolute;
+                top: 40%;
+                transform: translateY(-50%);
+                right: 10px;
+            }
+        }
+        .form-btn {
+            width: 100%;
+            background-color: #219653;
+            border: none;
+            padding: 20px;
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 3.5rem;
+        }
+        .form-add-info {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            .add-info {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #fff;
+                font-size: 1.1rem;
+                font-weight: 600;
+            }
+            .add-info-img {
+                width: 32px;
+                width: 52px;
+                margin-right: 1rem;
+            }
+        }
+    }
+}
+
+.footer {
+    padding: var(--mainPadding);
+    background-color: $grey;
+    color: #fff;
+    & a {
+        color: #fff;
+        text-decoration: none;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .link-item {
+        margin-bottom: 1rem;
+    }
+    .footer-title {
+        color: $mainGreen;
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 3.5rem;
+    }
+    .footer-logo {
+        width: 172px;
+        height: 50px;
+    }
+    .footer-info {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #fff;
+        padding-bottom: 4rem;
+        .footer-info-contacts {
+            width: 25%;
+            p {
+                margin-bottom: .6rem;
+            }
+        }
+        .footer-info-subscription {
+            width: 40%;
+            .subscription-form {
+                margin-bottom: 3rem;
+                .subscription-field {
+                    position: relative;
+                    input {
+                        width: 70%;
+                        padding: 1.1rem;
+                        margin: 0;
+                        background-color: transparent;
+                        border: 1px solid #fff;
+                        color: #fff;
+                        &::placeholder {
+                            color: #fff;
+                        }
+                    }
+                    button {
+                        position: absolute;
+                        top: 0;
+                        right: 1px;
+                        width: 30%;
+                        height: 100%;
+                        margin: 0;
+                        border: 1px solid $mainGreen;
+                    }
+                }
+            }
+        }
+    }
+    .footer-copy {
+        text-align: center;
+        padding-top: 2.5rem;
+    }
+}

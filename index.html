@@ -2,13 +2,305 @@
 <html lang="ru">
 
 <head>
+    <title>Resta</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resta</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <header class="header">
+        <div class="header-back">
+            <picture>
+                <source srcset="img/header.webp 1x, img/header@2x.webp 2x" type="image/webp">
+                <img src="img/header.jpg 1x" srcset="img/header@2x.jpg 2x" alt="">
+            </picture>
+        </div>
 
+        <div class="nav-row">
+            <div class="logo">
+                <picture>
+                    <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x" type="image/webp">
+                    <img src="img/logo.png 1x" srcset="img/logo@2x.png 2x" alt="">
+                </picture>
+            </div>
+
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li class="nav-list-item"><a href="#">Home</a></li>
+                    <li class="nav-list-item"><a href="#">Menu</a></li>
+                    <li class="nav-list-item">
+                        <a class="drop" href="#">Pages</a>
+                        <ul class="sub-nav-list"></ul>
+                    </li>
+                    <li class="nav-list-item">
+                        <a class="drop" href="#">Blog</a>
+                        <ul class="sub-nav-list"></ul>
+                    </li>
+                    <li class="nav-list-item"><a href="#">Contact</a></li>
+                    <li class="nav-list-item to-right"><a class="active" href="#">Book a table</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="tagline">
+            <h1>Fresh and Delicious Food For your Health</h1>
+            <button class="main-btn">View menus</button>
+        </div>
+    </header>
+
+    <article class="recipe">
+        <div class="recipe-text">
+            <h2 class="recipe-title">Sed ut perspiciatis unde omnis iste natus</h2>
+            <p class="recipe-desc">Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. Exercitation photo booth stumptown tote bag todo Banksy, elit small batch freegan sed. Craft
+                beer elit seitan exercitation photo booth et 8-bit kale chips proident chillwave deep vow laborum. Aliquip veniam delectus, marfa eiusmod pinterest.</p>
+            <button class="secondaryBtn">
+                <picture>
+                    <source srcset="img/flour.webp 1x, img/flour@2x.webp 2x" type="image/webp">
+                    <img src="img/flour.png 1x" srcset="img/flour@2x.png 2x" alt="">
+                </picture>
+                <span>Fresh Ingredients</span>
+            </button>
+            <button class="secondaryBtn">
+                <picture>
+                    <source srcset="img/chef.webp 1x, img/chef@2x.webp 2x" type="image/webp">
+                    <img src="img/chef.png 1x" srcset="img/chef@2x.png 2x" alt="">
+                </picture>
+                <span>Expert cooker</span>
+            </button>
+        </div>
+        <div class="recipe-photo">
+            <div class="recipe-photo-main">
+                <picture>
+                    <source srcset="img/cake.webp 1x, img/cake@2x.webp 2x" type="image/webp">
+                    <img src="img/cake.jpg 1x" srcset="img/cake@2x.jpg 2x" alt="">
+                </picture>
+            </div>
+            <div class="recipe-photo-mini">
+                <picture>
+                    <source srcset="img/cake-2.webp 1x, img/cake-2@2x.webp 2x" type="image/webp">
+                    <img src="img/cake-2.jpg 1x" srcset="img/cake-2@2x.jpg 2x" alt="">
+                </picture>
+            </div>
+        </div>
+
+    </article>
+
+    <section class="recomended">
+        <h2 class="block-title">Delicious Food For You</h2>
+        <div class="food-items">
+            <article class="food-item">
+                <div class="food-item-img">
+                    <picture>
+                        <source srcset="img/food/chicken.webp 1x, img/food/chicken@2x.webp 2x" type="image/webp">
+                        <img src="img/food/chicken.jpg 1x" srcset="img/food/chicken.jpg 2x" alt="">
+                    </picture>
+                </div>
+                <div class="food-item-info">
+                    <h3 class="food-item-name">Chicken Chilis</h3>
+                    <p class="food-item-desc">Craft beer elit seitan exercitation photo booth et 8-bit kale chips.</p>
+                    <p class="food-item-price">20</p>
+                </div>
+            </article>
+
+            <article class="food-item">
+                <div class="food-item-img">
+                    <picture>
+                        <source srcset="img/food/rice.webp 1x, img/food/rice@2x.webp 2x" type="image/webp">
+                        <img src="img/food/rice.jpg 1x" srcset="img/food/rice.jpg 2x" alt="">
+                    </picture>
+                </div>
+                <div class="food-item-info">
+                    <h3 class="food-item-name">Fried Rice</h3>
+                    <p class="food-item-desc">Rice is the seed of the grass species Oryza glaberrima</p>
+                    <p class="food-item-price">50.4</p>
+                </div>
+            </article>
+
+            <article class="food-item">
+                <div class="food-item-img">
+                    <picture>
+                        <source srcset="img/food/burger.webp 1x, img/food/burger@2x.webp 2x" type="image/webp">
+                        <img src="img/food/burger.jpg 1x" srcset="img/food/burger.jpg 2x" alt="">
+                    </picture>
+                </div>
+                <div class="food-item-info">
+                    <h3 class="food-item-name">Burger Cury</h3>
+                    <p class="food-item-desc">The patty may be pan fried, grilled, smoked or flame broiled.</p>
+                    <p class="food-item-price">20</p>
+                </div>
+            </article>
+
+            <article class="food-item">
+                <div class="food-item-img">
+                    <picture>
+                        <source srcset="img/food/avocado.webp 1x, img/food/avocado@2x.webp 2x" type="image/webp">
+                        <img src="img/food/avocado.jpg 1x" srcset="img/food/avocado.jpg 2x" alt="">
+                    </picture>
+                </div>
+                <div class="food-item-info">
+                    <h3 class="food-item-name">Avocado toats</h3>
+                    <p class="food-item-desc">The avocado (Persea americana), a tree likely originating from Mexico.</p>
+                    <p class="food-item-price">120</p>
+                </div>
+            </article>
+
+            <article class="food-item">
+                <div class="food-item-img">
+                    <picture>
+                        <source srcset="img/food/vegetable.webp 1x, img/food/vegetable@2x.webp 2x" type="image/webp">
+                        <img src="img/food/vegetable.jpg 1x" srcset="img/food/vegetable.jpg 2x" alt="">
+                    </picture>
+                </div>
+                <div class="food-item-info">
+                    <h3 class="food-item-name">Vegetable fry</h3>
+                    <p class="food-item-desc">Vegetables: red bell pepper, yellow bell peppers, sugar snap peas, carrots, mushrooms, broccoli, baby corn.</p>
+                    <p class="food-item-price">10</p>
+                </div>
+            </article>
+
+            <article class="food-item">
+                <div class="food-item-img">
+                    <picture>
+                        <source srcset="img/food/bread.webp 1x, img/food/bread@2x.webp 2x" type="image/webp">
+                        <img src="img/food/bread.jpg 1x" srcset="img/food/bread.jpg 2x" alt="">
+                    </picture>
+                </div>
+                <div class="food-item-info">
+                    <h3 class="food-item-name">Bread</h3>
+                    <p class="food-item-desc">Tasty!</p>
+                    <p class="food-item-price">0.4</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <h2 class="block-title">Photo Gallery</h2>
+        <div class="gallery-items">
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="img/gallery/g1.webp 1x, img/gallery/g1@2x.webp 2x" type="image/webp">
+                    <img src="img/gallery/ 1x" srcset="img/gallery/g1.jpg 2x" alt="">
+                </picture>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="img/gallery/g2.webp 1x, img/gallery/g2@2x.webp 2x" type="image/webp">
+                    <img src="img/gallery/g2.jpg 1x" srcset="img/gallery/g2.jpg 2x" alt="">
+                </picture>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="img/gallery/g3.webp 1x, img/gallery/g3@2x.webp 2x" type="image/webp">
+                    <img src="img/fogalleryod/g3.jpg 1x" srcset="img/gallery/g3.jpg 2x" alt="">
+                </picture>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="img/gallery/g4.webp 1x, img/gallery/g4@2x.webp 2x" type="image/webp">
+                    <img src="img/gallery/g4.jpg 1x" srcset="img/gallery/g4.jpg 2x" alt="">
+                </picture>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="img/gallery/g5.webp 1x, img/gallery/g5@2x.webp 2x" type="image/webp">
+                    <img src="img/gallery/g5.jpg 1x" srcset="img/gallery/g5.jpg 2x" alt="">
+                </picture>
+            </div>
+            <div class="gallery-item">
+                <picture>
+                    <source srcset="img/gallery/g6.webp 1x, img/gallery/g6@2x.webp 2x" type="image/webp">
+                    <img src="img/gallery/g6.jpg 1x" srcset="img/gallery/g6.jpg 2x" alt="">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-reservation">
+        <h2 class="block-title">Reservation</h2>
+        <form action="" class="reservation">
+            <h3 class="form-title">Book a Table</h3>
+            <div class="form-item">
+                <input type="text" class="form-input" placeholder="Your name" required>
+            </div>
+            <div class="form-item">
+                <input type="tel" class="form-input" placeholder="Phone number" required>
+            </div>
+            <div class="form-item">
+                <input type="date" class="form-input" placeholder="Date" required>
+            </div>
+            <div class="form-item">
+                <div class="drop-arrow"></div>
+                <select class="form-input" placeholder="Dinner">
+                    <option value="">Dinner</option>
+                    <option value="">Supper</option>
+                </select>
+            </div>
+            <button class="form-btn" type="submit">Book</button>
+
+            <div class="form-add-info">
+                <div class="add-info">
+                    <div class="add-info-img">
+                        <img src="img/adress@2x.png" alt="">
+                    </div>
+                    <div class="add-info-text">
+                        <div class="add-info-name">Address</div>
+                        <div class="add-info-desc">20/D, Kings road, Green lane</div>
+                    </div>
+                </div>
+
+                <div class="add-info">
+                    <div class="add-info-img">
+                        <img src="img/phone@2x.png" alt="">
+                    </div>
+                    <div class="add-info-text">
+                        <div class="add-info-name">Reservation</div>
+                        <div class="add-info-desc">+7 989 567 87 34</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-info">
+            <div class="footer-info-contacts">
+                <h4 class="footer-title">
+                    <div class="footer-logo">
+                        <picture>
+                            <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x" type="image/webp">
+                            <img src="img/logo.png 1x" srcset="img/logo@2x.png 2x" alt="">
+                        </picture>
+                    </div>
+                </h4>
+                <p class="adress">5th flora, 700/D kings road, green lane New York-1782</p>
+                <p class="phone">+10 367 826 2567</p>
+                <p class="email">contact@carpenter.com</p>
+            </div>
+            <div class="footer-info-links">
+                <h4 class="footer-title">Useful Links</h4>
+                <ul class="links-list">
+                    <li class="link-item"><a href="#">Menu</a></li>
+                    <li class="link-item"><a href="#">About</a></li>
+                    <li class="link-item"><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-info-subscription">
+                <h4 class="footer-title">Subscribe</h4>
+                <form action="" class="subscription-form">
+                    <div class="subscription-field">
+                        <input type="text" placeholder="Enter your email">
+                        <button class="main-btn mini">Subscribe</button>
+                    </div>
+                </form>
+                <p class="subscription-info">Esteem spirit temper too say adieus who direct esteem esteems luckily.</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <p>Copyright &copy;2020 All rights reserved</p>
+        </div>
+    </footer>
 </body>
 
 </html>
