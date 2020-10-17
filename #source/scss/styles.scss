@@ -71,6 +71,9 @@ body {
                 }
                 &.active {
                     border-bottom: 4px solid $mainGreen;
+                    &:hover {
+                        border-bottom: 4px solid darkorange;
+                    }
                 }
             }
             &.to-right {
@@ -94,7 +97,9 @@ h1 {
     border: none;
     color: #fff;
     padding: 1rem 4rem;
-    &:hover {}
+    &:hover {
+        background-color: green;
+    }
     &.mini {
         display: flex;
         justify-content: center;
@@ -119,7 +124,9 @@ h1 {
         height: 46.5px;
         margin-right: 1.2rem;
     }
-    &:hover {}
+    &:hover {
+        background-color: #000;
+    }
 }
 
 .tagline {
@@ -301,6 +308,10 @@ h1 {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 3.5rem;
+            &:hover {
+                background-color: green;
+                cursor: pointer;
+            }
         }
         .form-add-info {
             width: 100%;
@@ -316,9 +327,12 @@ h1 {
                 font-weight: 600;
             }
             .add-info-img {
-                width: 32px;
-                width: 52px;
+                width: 40px;
+                height: 52px;
                 margin-right: 1rem;
+                &>img {
+                    object-fit: contain;
+                }
             }
         }
     }
@@ -365,6 +379,15 @@ h1 {
                 margin-bottom: 3rem;
                 .subscription-field {
                     position: relative;
+                    .subscription-label {
+                        color: rgba(255, 255, 255, .5);
+                        background-color: $grey;
+                        padding: 0 7px;
+                        position: absolute;
+                        left: 20px;
+                        top: 20px;
+                        transition: all .5s;
+                    }
                     input {
                         width: 70%;
                         padding: 1.1rem;
@@ -374,6 +397,11 @@ h1 {
                         color: #fff;
                         &::placeholder {
                             color: #fff;
+                        }
+                        &:focus+.subscription-label,
+                        &:valid+.subscription-label {
+                            color: #fff;
+                            top: -15px;
                         }
                     }
                     button {
@@ -397,7 +425,6 @@ h1 {
 
 .error {
     border: 1px solid red !important;
-    outline: 1px solid red;
 }
 
 .error-text {
@@ -406,7 +433,6 @@ h1 {
 
 .valid {
     border: 1px solid green !important;
-    outline: 1px solid green;
 }
 
 .valid-text {

@@ -29,12 +29,18 @@ function isNameValid(name) {
     return false;
 }
 
-function nameValidation(nameInput, nameLabel) {
+function nameValidation(nameInput, nameLabel, isFull = false) {
     if (nameInput.value === "") {
+        if (isFull) {
+            nameInput.classList.add('error');
+            nameLabel.classList.add('error-text');
+        } else {
+            nameInput.classList.remove('error');
+            nameLabel.classList.remove('error-text');
+        }
         nameInput.classList.remove('valid');
         nameLabel.classList.remove('valid-text');
-        nameInput.classList.remove('error');
-        nameLabel.classList.remove('error-text');
+
         nameLabel.textContent = "Your name";
     } else {
         if (!isNameValid(nameInput.value)) {
@@ -42,13 +48,14 @@ function nameValidation(nameInput, nameLabel) {
             nameLabel.classList.remove('valid-text');
             nameInput.classList.add('error');
             nameLabel.classList.add('error-text');
-            nameLabel.textContent = "Имя не может содержать"
+            nameLabel.textContent = "The name can only contain letters"
         } else {
             nameInput.classList.remove('error');
             nameLabel.classList.remove('error-text');
             nameInput.classList.add('valid');
             nameLabel.classList.add('valid-text');
             nameLabel.textContent = "Your name";
+            return true;
         }
     }
 }
@@ -67,6 +74,13 @@ phoneInput.addEventListener('input', (e) => {
 phoneInput.addEventListener('blur', (e) => {
     e.preventDefault();
     phoneNumberValidation(phoneInput, phoneLabel, false);
+    if (phoneInput.value === "+") {
+        phoneInput.value = "";
+        phoneLabel.classList.remove('error-text')
+        phoneInput.classList.remove('error');
+        phoneLabel.classList.remove('valid-text')
+        phoneInput.classList.remove('valid');
+    }
 });
 
 function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
@@ -112,6 +126,7 @@ function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
         phoneLabel.classList.add('valid-text')
         phoneInput.classList.add('valid');
         isPhoneValid = true;
+        return true;
     } else {
         phoneLabel.classList.remove('valid-text')
         phoneInput.classList.remove('valid');
@@ -124,26 +139,75 @@ function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
 
 function isPhoneNumberValid(number) {
     let trimName = number.trim();
-    let regexp = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/
+    let regexp = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
     if (regexp.test(number))
         return true;
     return false;
 }
 
+function phoneReset(phoneInput, phoneLabel) {
+    phoneInput.classList.remove('valid');
+    phoneLabel.classList.remove('valid-text');
+    phoneInput.value = "";
+}
 
-
-
-
+function nameReset(nameInput, nameLabel) {
+    nameInput.classList.remove('valid');
+    nameLabel.classList.remove('valid-text');
+    nameInput.value = "";
+}
 
 formBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    nameValidation(nameInput, nameLabel);
+    if (nameValidation(nameInput, nameLabel, true) && phoneNumberValidation(phoneInput, phoneLabel, false)) {
+        nameReset(nameInput, nameLabel);
+        phoneReset(phoneInput, phoneLabel)
+    }
+});
 
+//--------
+let subscriptionForm = document.querySelector('.subscription-form');
+let subscriptionInput = subscriptionForm.querySelector('input');
+let subscriptionLabel = subscriptionForm.querySelector('input + label');
+let subscriptionBtn = subscriptionForm.querySelector('button');
 
+function emailValidation(subscriptionInput, subscriptionLabel, isFull = false) {
+    let regexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
+    if (regexp.test(subscriptionInput.value)) {
+        if (isFull) {
+            subscriptionInput.value = "";
+            subscriptionLabel.classList.remove('error-text');
+            subscriptionInput.classList.remove('error');
+            subscriptionLabel.classList.remove('valid-text');
+            subscriptionInput.classList.remove('valid');
+            subscriptionLabel.textContent = "Enter your email";
+        } else {
+            subscriptionLabel.classList.add('valid-text');
+            subscriptionInput.classList.add('valid');
+        }
+    } else {
+        let tmp = /.+@/;
+        if (!tmp.test(subscriptionInput.value)) {
+            subscriptionLabel.textContent = "Missing @ symbol";
+            subscriptionLabel.classList.add('error-text');
+            subscriptionInput.classList.add('error');
+        } else {
+            tmp = /.+@.+\..+/;
+            if (!tmp.test(subscriptionInput.value)) {
+                subscriptionLabel.textContent = "Missing domain name";
+                subscriptionLabel.classList.add('error-text');
+                subscriptionInput.classList.add('error');
+            }
+        }
+    }
+}
 
-    let date = form.querySelector('#input-date');
+subscriptionBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    emailValidation(subscriptionInput, subscriptionLabel, true);
+});
 
-
-
-
+subscriptionInput.addEventListener('blur', (e) => {
+    e.preventDefault();
+    emailValidation(subscriptionInput, subscriptionLabel);
 });

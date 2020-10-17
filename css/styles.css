@@ -139,6 +139,9 @@ body {
 .nav .nav-list .nav-list-item a.active {
   border-bottom: 4px solid #6FCF97;
 }
+.nav .nav-list .nav-list-item a.active:hover {
+  border-bottom: 4px solid darkorange;
+}
 .nav .nav-list .nav-list-item.to-right {
   margin-left: auto;
 }
@@ -157,6 +160,9 @@ h1 {
   border: none;
   color: #fff;
   padding: 1rem 4rem;
+}
+.main-btn:hover {
+  background-color: green;
 }
 .main-btn.mini {
   display: flex;
@@ -182,6 +188,10 @@ h1 {
   height: 46.5px;
   margin-right: 1.2rem;
 }
+.secondaryBtn:hover {
+  background-color: #000;
+}
+
 .tagline {
   display: flex;
   flex-direction: column;
@@ -363,6 +373,10 @@ h1 {
   font-weight: 600;
   margin-bottom: 3.5rem;
 }
+.form-reservation .reservation .form-btn:hover {
+  background-color: green;
+  cursor: pointer;
+}
 .form-reservation .reservation .form-add-info {
   width: 100%;
   display: flex;
@@ -378,9 +392,12 @@ h1 {
   font-weight: 600;
 }
 .form-reservation .reservation .form-add-info .add-info-img {
-  width: 32px;
-  width: 52px;
+  width: 40px;
+  height: 52px;
   margin-right: 1rem;
+}
+.form-reservation .reservation .form-add-info .add-info-img > img {
+  object-fit: contain;
 }
 
 .footer {
@@ -429,6 +446,15 @@ h1 {
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field {
   position: relative;
 }
+.footer .footer-info .footer-info-subscription .subscription-form .subscription-field .subscription-label {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #333;
+  padding: 0 7px;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  transition: all 0.5s;
+}
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field input {
   width: 70%;
   padding: 1.1rem;
@@ -439,6 +465,10 @@ h1 {
 }
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field input::placeholder {
   color: #fff;
+}
+.footer .footer-info .footer-info-subscription .subscription-form .subscription-field input:focus + .subscription-label, .footer .footer-info .footer-info-subscription .subscription-form .subscription-field input:valid + .subscription-label {
+  color: #fff;
+  top: -15px;
 }
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field button {
   position: absolute;
@@ -456,7 +486,6 @@ h1 {
 
 .error {
   border: 1px solid red !important;
-  outline: 1px solid red;
 }
 
 .error-text {
@@ -465,7 +494,6 @@ h1 {
 
 .valid {
   border: 1px solid green !important;
-  outline: 1px solid green;
 }
 
 .valid-text {
