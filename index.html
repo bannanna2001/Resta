@@ -222,13 +222,15 @@
         <form action="" class="reservation">
             <h3 class="form-title">Book a Table</h3>
             <div class="form-item">
-                <input type="text" class="form-input" placeholder="Your name" required>
+                <input type="text" class="form-input" id="input-name" name="name" required>
+                <label for="input-name" class="place-label">Your name</label>
             </div>
             <div class="form-item">
-                <input type="tel" class="form-input" placeholder="Phone number" required>
+                <input type="tel" class="form-input" id="input-phone" name="phone" required>
+                <label for="input-phone" class="place-label">Phone number</label>
             </div>
             <div class="form-item">
-                <input type="date" class="form-input" placeholder="Date" required>
+                <input type="date" class="form-input" id="input-date" name="date" placeholder="Date" required>
             </div>
             <div class="form-item">
                 <div class="drop-arrow"></div>
@@ -301,6 +303,10 @@
             <p>Copyright &copy;2020 All rights reserved</p>
         </div>
     </footer>
+
+    <script src="js/script.js">
+        tmp();
+    </script>
 </body>
 
 </html>

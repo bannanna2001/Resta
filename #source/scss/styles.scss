@@ -253,18 +253,28 @@ h1 {
         .form-item {
             width: 48%;
             position: relative;
+            color: #fff;
+            .place-label {
+                color: rgba(255, 255, 255, .5);
+                background-color: $mainGreen;
+                padding: 0 7px;
+                position: absolute;
+                left: 20px;
+                top: 20px;
+                transition: all .5s;
+            }
             .form-input {
                 color: #fff;
+                z-index: 2;
                 width: 100%;
                 background-color: transparent;
                 border: 1px solid #fff;
                 padding: 20px;
                 margin-bottom: 20px;
-                &::placeholder {
+                &:focus+.place-label,
+                &:valid+.place-label {
                     color: #fff;
-                }
-                &[type='date'] {
-                    appearance: none;
+                    top: -15px;
                 }
             }
             select {
@@ -383,4 +393,22 @@ h1 {
         text-align: center;
         padding-top: 2.5rem;
     }
+}
+
+.error {
+    border: 1px solid red !important;
+    outline: 1px solid red;
+}
+
+.error-text {
+    color: red !important;
+}
+
+.valid {
+    border: 1px solid green !important;
+    outline: 1px solid green;
+}
+
+.valid-text {
+    color: green !important;
 }
