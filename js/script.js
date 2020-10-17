@@ -8,6 +8,7 @@ let nameLabel = form.querySelector('#input-name + label');
 
 let phoneInput = form.querySelector('#input-phone');
 let phoneLabel = form.querySelector('#input-phone + label');
+let phonePrevValue = "";
 let isPhoneValid = false;
 
 nameInput.addEventListener('change', (e) => {
@@ -65,34 +66,43 @@ phoneInput.addEventListener('input', (e) => {
 
 phoneInput.addEventListener('blur', (e) => {
     e.preventDefault();
-    phoneNumberValidation(phoneInput, phoneLabel);
+    phoneNumberValidation(phoneInput, phoneLabel, false);
 });
 
-
-function phoneNumberValidation(phoneInput, phoneLabel) {
-    let curSign = Number(phoneInput.value.slice(-1));
-
-    if (phoneInput.value === "") {
-        phoneInput.value = "+";
-    }
-
-    if (!Number.isInteger(curSign) || isPhoneValid) {
-        phoneInput.value = phoneInput.value.slice(0, phoneInput.value.length - 1);
-    } else {
+function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
+    if (isFull) {
         let regexp1 = /^[+][0-9]{1}$/
         let regexp2 = /^[+][0-9]{1}[(]{1}[0-9]{3}$/
         let regexp3 = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}$/
         let regexp4 = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}$/
         let regexp5 = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/
 
-        if (regexp1.test(phoneInput.value)) {
-            phoneInput.value += '(';
-        } else if (regexp2.test(phoneInput.value)) {
-            phoneInput.value += ') ';
-        } else if (regexp3.test(phoneInput.value) || regexp4.test(phoneInput.value)) {
-            phoneInput.value += '-';
-        } else if (regexp5.test(phoneInput.value)) {
-            isPhoneValid = true;
+        let curSign = phoneInput.value.slice(-1) === " " ? NaN : Number(phoneInput.value.slice(-1));
+
+        if (phoneInput.value === "")
+            phoneInput.value = "+";
+
+        if (phoneInput.value.length > phonePrevValue.length) {
+            if (!Number.isInteger(curSign) || isPhoneValid) {
+                phoneInput.value = phoneInput.value.slice(0, -1);
+            } else {
+                if (regexp1.test(phoneInput.value)) {
+                    phoneInput.value += '(';
+                } else if (regexp2.test(phoneInput.value)) {
+                    phoneInput.value += ') ';
+                } else if (regexp3.test(phoneInput.value) || regexp4.test(phoneInput.value)) {
+                    phoneInput.value += '-';
+                } else if (regexp5.test(phoneInput.value)) {
+                    isPhoneValid = true;
+                }
+            }
+        } else {
+            if (!Number.isInteger(curSign)) {
+                phoneInput.value = phoneInput.value.slice(0, -2);
+            }
+
+            if (phoneInput.value === "")
+                phoneInput.value = "+";
         }
     }
 
@@ -101,12 +111,15 @@ function phoneNumberValidation(phoneInput, phoneLabel) {
         phoneInput.classList.remove('error');
         phoneLabel.classList.add('valid-text')
         phoneInput.classList.add('valid');
+        isPhoneValid = true;
     } else {
         phoneLabel.classList.remove('valid-text')
         phoneInput.classList.remove('valid');
         phoneLabel.classList.add('error-text')
         phoneInput.classList.add('error');
+        isPhoneValid = false;
     }
+    phonePrevValue = phoneInput.value;
 }
 
 function isPhoneNumberValid(number) {
