@@ -217,6 +217,7 @@ h1 {
                 min-width: 109px;
             }
             .food-item-info {
+                align-self: flex-start;
                 width: calc(100% - calc(109px + (210 - 109) * ((100vw - 834px) / (1440 - 834))));
                 padding-left: 20px;
                 color: #000;
@@ -265,7 +266,7 @@ h1 {
     padding: var(--mainPadding);
     .reservation {
         background-color: $mainGreen;
-        padding: 4.625rem 7rem;
+        padding: 4.625rem 7vw;
         display: flex;
         justify-content: space-between;
         flex-flow: row wrap;
@@ -373,7 +374,7 @@ h1 {
     }
     .footer-title {
         color: $mainGreen;
-        font-size: 1.1rem;
+        font-size: max(14px, calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))));
         font-weight: 600;
         margin-bottom: 3.5rem;
     }
@@ -389,15 +390,18 @@ h1 {
         .footer-info-contacts {
             width: 25%;
             p {
+                font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
                 margin-bottom: .6rem;
             }
         }
         .footer-info-subscription {
             width: 40%;
+            font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
             .subscription-form {
                 margin-bottom: 3rem;
                 .subscription-field {
                     position: relative;
+                    display: flex;
                     .subscription-label {
                         color: rgba(255, 255, 255, .5);
                         background-color: $grey;
@@ -408,6 +412,7 @@ h1 {
                         transition: all .5s;
                     }
                     input {
+                        font-size: max(calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))), 14px);
                         width: 70%;
                         padding: 1.1rem;
                         margin: 0;
@@ -424,21 +429,21 @@ h1 {
                         }
                     }
                     button {
-                        position: absolute;
-                        top: 0;
-                        right: 1px;
+                        font-size: max(calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))), 14px);
                         width: 30%;
-                        height: 100%;
-                        margin: 0;
                         border: 1px solid $mainGreen;
                     }
                 }
             }
         }
+        .footer-info-links a {
+            font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
+        }
     }
     .footer-copy {
         text-align: center;
         padding-top: 2.5rem;
+        font-size: max(calc(14px + (18 - 14) * ((100vw - 375px) / (1440 - 375))), 14px);
     }
 }
 
@@ -549,6 +554,27 @@ h1 {
     .block-title {
         font-size: calc(1.4rem + .5vw);
     }
+    .footer {
+        .footer-logo {
+            width: 140px;
+            height: 40px;
+        }
+    }
+}
+
+// 848
+@media all and (max-width: 53em) {
+    .form-reservation {
+        .reservation {
+            padding: 2.2rem 5vw;
+            .form-add-info {
+                display: none;
+            }
+            .form-btn {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
 // 832px
@@ -600,16 +626,48 @@ h1 {
             .food-item {
                 .food-item-info {
                     .food-item-name {
-                        font-size: calc(18px + (24 - 18) * ((100vw - 834px) / (1440 - 843)));
+                        font-size: 1.1rem;
                     }
                     .food-item-desc {
-                        font-size: calc(12px + (18 - 12) * ((100vw - 834px) / (1440 - 843)));
+                        font-size: .75rem;
                     }
                     .food-item-price {
-                        font-size: calc(18px + (24 - 18) * ((100vw - 834px) / (1440 - 843)));
+                        font-size: 1.1rem;
+                        margin-top: 5px;
                     }
                 }
             }
+        }
+    }
+    .footer {
+        .footer-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .footer-info {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            .footer-info-contacts {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-bottom: 8vw;
+                width: 100%;
+            }
+            .footer-info-subscription {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .footer-info-links {
+                display: none;
+            }
+        }
+        p {
+            text-align: center;
         }
     }
 }
@@ -667,6 +725,23 @@ h1 {
     }
     .block-title {
         margin-bottom: 20px;
+    }
+    .form-reservation {
+        padding: 5% 2% 2%;
+        .reservation {
+            .form-title {
+                font-size: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            .form-item {
+                width: 100%;
+                margin-bottom: 1.2rem;
+                font-size: .75rem;
+            }
+            .form-btn {
+                font-size: .8rem;
+            }
+        }
     }
 }
 

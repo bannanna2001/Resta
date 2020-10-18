@@ -283,6 +283,7 @@ h1 {
   min-width: 109px;
 }
 .recomended .food-items .food-item .food-item-info {
+  align-self: flex-start;
   width: calc(100% - calc(109px + (210 - 109) * ((100vw - 834px) / (1440 - 834))));
   padding-left: 20px;
   color: #000;
@@ -327,7 +328,7 @@ h1 {
 }
 .form-reservation .reservation {
   background-color: #6FCF97;
-  padding: 4.625rem 7rem;
+  padding: 4.625rem 7vw;
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
@@ -436,7 +437,7 @@ h1 {
 }
 .footer .footer-title {
   color: #6FCF97;
-  font-size: 1.1rem;
+  font-size: max(14px, calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))));
   font-weight: 600;
   margin-bottom: 3.5rem;
 }
@@ -454,16 +455,19 @@ h1 {
   width: 25%;
 }
 .footer .footer-info .footer-info-contacts p {
+  font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
   margin-bottom: 0.6rem;
 }
 .footer .footer-info .footer-info-subscription {
   width: 40%;
+  font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
 }
 .footer .footer-info .footer-info-subscription .subscription-form {
   margin-bottom: 3rem;
 }
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field {
   position: relative;
+  display: flex;
 }
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field .subscription-label {
   color: rgba(255, 255, 255, 0.5);
@@ -475,6 +479,7 @@ h1 {
   transition: all 0.5s;
 }
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field input {
+  font-size: max(calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))), 14px);
   width: 70%;
   padding: 1.1rem;
   margin: 0;
@@ -490,17 +495,17 @@ h1 {
   top: -15px;
 }
 .footer .footer-info .footer-info-subscription .subscription-form .subscription-field button {
-  position: absolute;
-  top: 0;
-  right: 1px;
+  font-size: max(calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))), 14px);
   width: 30%;
-  height: 100%;
-  margin: 0;
   border: 1px solid #6FCF97;
+}
+.footer .footer-info .footer-info-links a {
+  font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
 }
 .footer .footer-copy {
   text-align: center;
   padding-top: 2.5rem;
+  font-size: max(calc(14px + (18 - 14) * ((100vw - 375px) / (1440 - 375))), 14px);
 }
 
 .error {
@@ -608,6 +613,22 @@ h1 {
   .block-title {
     font-size: calc(1.4rem + .5vw);
   }
+
+  .footer .footer-logo {
+    width: 140px;
+    height: 40px;
+  }
+}
+@media all and (max-width: 53em) {
+  .form-reservation .reservation {
+    padding: 2.2rem 5vw;
+  }
+  .form-reservation .reservation .form-add-info {
+    display: none;
+  }
+  .form-reservation .reservation .form-btn {
+    margin-bottom: 0;
+  }
 }
 @media all and (max-width: 52em) {
   .recipe {
@@ -655,13 +676,44 @@ h1 {
   }
 
   .recomended .food-items .food-item .food-item-info .food-item-name {
-    font-size: calc(18px + (24 - 18) * ((100vw - 834px) / (1440 - 843)));
+    font-size: 1.1rem;
   }
   .recomended .food-items .food-item .food-item-info .food-item-desc {
-    font-size: calc(12px + (18 - 12) * ((100vw - 834px) / (1440 - 843)));
+    font-size: 0.75rem;
   }
   .recomended .food-items .food-item .food-item-info .food-item-price {
-    font-size: calc(18px + (24 - 18) * ((100vw - 834px) / (1440 - 843)));
+    font-size: 1.1rem;
+    margin-top: 5px;
+  }
+
+  .footer .footer-title {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .footer .footer-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .footer .footer-info .footer-info-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 8vw;
+    width: 100%;
+  }
+  .footer .footer-info .footer-info-subscription {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-info .footer-info-links {
+    display: none;
+  }
+  .footer p {
+    text-align: center;
   }
 }
 @media all and (max-width: 42.5em) {
@@ -716,6 +768,22 @@ h1 {
 
   .block-title {
     margin-bottom: 20px;
+  }
+
+  .form-reservation {
+    padding: 5% 2% 2%;
+  }
+  .form-reservation .reservation .form-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .form-reservation .reservation .form-item {
+    width: 100%;
+    margin-bottom: 1.2rem;
+    font-size: 0.75rem;
+  }
+  .form-reservation .reservation .form-btn {
+    font-size: 0.8rem;
   }
 }
 @media all and (max-width: 27em) {
