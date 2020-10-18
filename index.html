@@ -19,6 +19,10 @@
         </div>
 
         <div class="nav-row">
+            <div class="burger hidden">
+                <img src="img/burger-close.svg" alt="open menu">
+            </div>
+
             <div class="logo">
                 <picture>
                     <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x" type="image/webp">
@@ -44,7 +48,7 @@
             </nav>
         </div>
         <div class="tagline">
-            <h1>Fresh and Delicious Food For your Health</h1>
+            <h1>Fresh and Delicious Food<br> For your Health</h1>
             <button class="main-btn">View menus</button>
         </div>
     </header>
@@ -52,6 +56,7 @@
     <article class="recipe">
         <div class="recipe-text">
             <h2 class="recipe-title">Sed ut perspiciatis unde omnis iste natus</h2>
+            <div class="recipe-title-border"></div>
             <p class="recipe-desc">Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi. Exercitation photo booth stumptown tote bag todo Banksy, elit small batch freegan sed. Craft
                 beer elit seitan exercitation photo booth et 8-bit kale chips proident chillwave deep vow laborum. Aliquip veniam delectus, marfa eiusmod pinterest.</p>
             <button class="secondaryBtn">
@@ -89,89 +94,97 @@
     <section class="recomended">
         <h2 class="block-title">Delicious Food For You</h2>
         <div class="food-items">
-            <article class="food-item">
-                <div class="food-item-img">
-                    <picture>
-                        <source srcset="img/food/chicken.webp 1x, img/food/chicken@2x.webp 2x" type="image/webp">
-                        <img src="img/food/chicken.jpg 1x" srcset="img/food/chicken.jpg 2x" alt="">
-                    </picture>
-                </div>
-                <div class="food-item-info">
-                    <h3 class="food-item-name">Chicken Chilis</h3>
-                    <p class="food-item-desc">Craft beer elit seitan exercitation photo booth et 8-bit kale chips.</p>
-                    <p class="food-item-price">20</p>
-                </div>
-            </article>
+            <a href="#" class="food-link">
+                <article class="food-item">
+                    <div class="food-item-img">
+                        <picture>
+                            <source srcset="img/food/chicken.webp 1x, img/food/chicken@2x.webp 2x" type="image/webp">
+                            <img src="img/food/chicken.jpg 1x" srcset="img/food/chicken.jpg 2x" alt="">
+                        </picture>
+                    </div>
+                    <div class="food-item-info">
+                        <h3 class="food-item-name">Chicken Chilis</h3>
+                        <p class="food-item-desc">Craft beer elit seitan exercitation photo booth et 8-bit kale chips.</p>
+                        <p class="food-item-price">20</p>
+                    </div>
+                </article>
+            </a>
 
-            <article class="food-item">
-                <div class="food-item-img">
-                    <picture>
-                        <source srcset="img/food/rice.webp 1x, img/food/rice@2x.webp 2x" type="image/webp">
-                        <img src="img/food/rice.jpg 1x" srcset="img/food/rice.jpg 2x" alt="">
-                    </picture>
-                </div>
-                <div class="food-item-info">
-                    <h3 class="food-item-name">Fried Rice</h3>
-                    <p class="food-item-desc">Rice is the seed of the grass species Oryza glaberrima</p>
-                    <p class="food-item-price">50.4</p>
-                </div>
-            </article>
-
-            <article class="food-item">
-                <div class="food-item-img">
-                    <picture>
-                        <source srcset="img/food/burger.webp 1x, img/food/burger@2x.webp 2x" type="image/webp">
-                        <img src="img/food/burger.jpg 1x" srcset="img/food/burger.jpg 2x" alt="">
-                    </picture>
-                </div>
-                <div class="food-item-info">
-                    <h3 class="food-item-name">Burger Cury</h3>
-                    <p class="food-item-desc">The patty may be pan fried, grilled, smoked or flame broiled.</p>
-                    <p class="food-item-price">20</p>
-                </div>
-            </article>
-
-            <article class="food-item">
-                <div class="food-item-img">
-                    <picture>
-                        <source srcset="img/food/avocado.webp 1x, img/food/avocado@2x.webp 2x" type="image/webp">
-                        <img src="img/food/avocado.jpg 1x" srcset="img/food/avocado.jpg 2x" alt="">
-                    </picture>
-                </div>
-                <div class="food-item-info">
-                    <h3 class="food-item-name">Avocado toats</h3>
-                    <p class="food-item-desc">The avocado (Persea americana), a tree likely originating from Mexico.</p>
-                    <p class="food-item-price">120</p>
-                </div>
-            </article>
-
-            <article class="food-item">
-                <div class="food-item-img">
-                    <picture>
-                        <source srcset="img/food/vegetable.webp 1x, img/food/vegetable@2x.webp 2x" type="image/webp">
-                        <img src="img/food/vegetable.jpg 1x" srcset="img/food/vegetable.jpg 2x" alt="">
-                    </picture>
-                </div>
-                <div class="food-item-info">
-                    <h3 class="food-item-name">Vegetable fry</h3>
-                    <p class="food-item-desc">Vegetables: red bell pepper, yellow bell peppers, sugar snap peas, carrots, mushrooms, broccoli, baby corn.</p>
-                    <p class="food-item-price">10</p>
-                </div>
-            </article>
-
-            <article class="food-item">
-                <div class="food-item-img">
-                    <picture>
-                        <source srcset="img/food/bread.webp 1x, img/food/bread@2x.webp 2x" type="image/webp">
-                        <img src="img/food/bread.jpg 1x" srcset="img/food/bread.jpg 2x" alt="">
-                    </picture>
-                </div>
-                <div class="food-item-info">
-                    <h3 class="food-item-name">Bread</h3>
-                    <p class="food-item-desc">Tasty!</p>
-                    <p class="food-item-price">0.4</p>
-                </div>
-            </article>
+            <a href="#" class="food-link">
+                <article class="food-item">
+                    <div class="food-item-img">
+                        <picture>
+                            <source srcset="img/food/rice.webp 1x, img/food/rice@2x.webp 2x" type="image/webp">
+                            <img src="img/food/rice.jpg 1x" srcset="img/food/rice.jpg 2x" alt="">
+                        </picture>
+                    </div>
+                    <div class="food-item-info">
+                        <h3 class="food-item-name">Fried Rice</h3>
+                        <p class="food-item-desc">Rice is the seed of the grass species Oryza glaberrima</p>
+                        <p class="food-item-price">50.4</p>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="food-link">
+                <article class="food-item">
+                    <div class="food-item-img">
+                        <picture>
+                            <source srcset="img/food/burger.webp 1x, img/food/burger@2x.webp 2x" type="image/webp">
+                            <img src="img/food/burger.jpg 1x" srcset="img/food/burger.jpg 2x" alt="">
+                        </picture>
+                    </div>
+                    <div class="food-item-info">
+                        <h3 class="food-item-name">Burger Cury</h3>
+                        <p class="food-item-desc">The patty may be pan fried, grilled, smoked or flame broiled.</p>
+                        <p class="food-item-price">20</p>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="food-link">
+                <article class="food-item">
+                    <div class="food-item-img">
+                        <picture>
+                            <source srcset="img/food/avocado.webp 1x, img/food/avocado@2x.webp 2x" type="image/webp">
+                            <img src="img/food/avocado.jpg 1x" srcset="img/food/avocado.jpg 2x" alt="">
+                        </picture>
+                    </div>
+                    <div class="food-item-info">
+                        <h3 class="food-item-name">Avocado toats</h3>
+                        <p class="food-item-desc">The avocado (Persea americana), a tree likely originating from Mexico.</p>
+                        <p class="food-item-price">120</p>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="food-link">
+                <article class="food-item">
+                    <div class="food-item-img">
+                        <picture>
+                            <source srcset="img/food/vegetable.webp 1x, img/food/vegetable@2x.webp 2x" type="image/webp">
+                            <img src="img/food/vegetable.jpg 1x" srcset="img/food/vegetable.jpg 2x" alt="">
+                        </picture>
+                    </div>
+                    <div class="food-item-info">
+                        <h3 class="food-item-name">Vegetable fry</h3>
+                        <p class="food-item-desc">Vegetables: red bell pepper, yellow bell peppers, sugar snap peas, carrots, mushrooms, broccoli, baby corn.</p>
+                        <p class="food-item-price">10</p>
+                    </div>
+                </article>
+            </a>
+            <a href="#" class="food-link">
+                <article class="food-item">
+                    <div class="food-item-img">
+                        <picture>
+                            <source srcset="img/food/bread.webp 1x, img/food/bread@2x.webp 2x" type="image/webp">
+                            <img src="img/food/bread.jpg 1x" srcset="img/food/bread.jpg 2x" alt="">
+                        </picture>
+                    </div>
+                    <div class="food-item-info">
+                        <h3 class="food-item-name">Bread</h3>
+                        <p class="food-item-desc">Tasty!</p>
+                        <p class="food-item-price">0.4</p>
+                    </div>
+                </article>
+            </a>
         </div>
     </section>
 
