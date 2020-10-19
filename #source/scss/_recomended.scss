@@ -1,0 +1,111 @@
+.recomended {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--mainPadding);
+}
+
+.recomended__items {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+.recomended__item {
+    display: flex;
+    align-items: center;
+}
+
+.recomended__img {
+    width: calc(109px + (210 - 109) * ((100vw - 834px) / (1440 - 834)));
+    min-width: 109px;
+}
+
+.recomended__content {
+    align-self: flex-start;
+    width: calc(100% - calc(109px + (210 - 109) * ((100vw - 834px) / (1440 - 834))));
+    padding-left: 20px;
+    color: #000;
+}
+
+.recomended__title {
+    font-size: calc(18px + (24 - 18) * ((100vw - 834px) / (1440 - 843)));
+    font-weight: 600;
+}
+
+.recomended__description {
+    font-size: calc(12px + (18 - 12) * ((100vw - 834px) / (1440 - 843)));
+    font-weight: 400;
+}
+
+.recomended__price {
+    color: var(--mainGreen);
+    margin-top: 1.2rem;
+    font-size: calc(18px + (24 - 18) * ((100vw - 834px) / (1440 - 843)));
+    &::before {
+        content: "\0024 ";
+    }
+}
+
+.recomended__link {
+    width: 48%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        background-color: rgb(226, 210, 210);
+    }
+}
+
+// 832px
+@media all and (max-width: 52em) {
+    .recomended__title {
+        font-size: 1.1rem;
+    }
+    .recomended__description {
+        font-size: .75rem;
+    }
+    .recomended__price {
+        font-size: 1.1rem;
+        margin-top: 5px;
+    }
+}
+
+// 680px
+@media all and (max-width: 42.5em) {
+    .recomended__items {
+        justify-content: center;
+    }
+    .recomended__item {
+        display: flex;
+        align-items: center;
+    }
+    .recomended__link {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+}
+
+// 600px
+@media all and (max-width: 37.5em) {
+    .recomended__link {
+        width: 85%;
+    }
+}
+
+// 432px
+@media all and (max-width: 27em) {
+    .recomended__items {
+        justify-content: center;
+    }
+    .recomended__item {
+        display: flex;
+        align-items: center;
+    }
+    .recomended__link {
+        width: 95%;
+    }
+}

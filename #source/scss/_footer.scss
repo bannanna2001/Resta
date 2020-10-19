@@ -1,0 +1,137 @@
+.footer {
+    padding: var(--mainPadding);
+    background-color: var(--grey);
+    color: #fff;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 4rem;
+}
+
+.footer__nav-link {
+    font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.footer__nav-item {
+    margin-bottom: 1rem;
+}
+
+.footer__title {
+    color: var(--mainGreen);
+    font-size: max(14px, calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))));
+    font-weight: 600;
+    margin-bottom: 3.5rem;
+}
+
+.footer__logo {
+    width: 172px;
+    height: 50px;
+}
+
+.footer__contacts {
+    width: 25%;
+    p {
+        font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
+        margin-bottom: .6rem;
+    }
+}
+
+.footer__subscription {
+    width: 40%;
+    font-size: max(calc(12px + (18 - 12) * ((100vw - 375px) / (1440 - 375))), 12px);
+}
+
+.footer__subscription-form {
+    margin-bottom: 3rem;
+}
+
+.footer__subscription-field {
+    position: relative;
+    display: flex;
+}
+
+.footer__subscription-label {
+    color: rgba(255, 255, 255, .5);
+    background-color: var(--grey);
+    padding: 0 7px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    transition: all .5s;
+}
+
+.footer__subscription-input {
+    font-size: max(calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))), 14px);
+    width: 70%;
+    padding: 1.1rem;
+    margin: 0;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    &:focus+.footer__subscription-label,
+    &:valid+.footer__subscription-label {
+        color: #fff;
+        top: -15px;
+    }
+}
+
+.main-btn_mini {
+    font-size: max(calc(14px + (18 - 14) * ((100vw - 834px) / (1440 - 834))), 14px);
+    width: 30%;
+    border: 1px solid var(--mainGreen);
+}
+
+.footer__copyright {
+    text-align: center;
+    padding-top: 2.5rem;
+    font-size: max(calc(14px + (18 - 14) * ((100vw - 375px) / (1440 - 375))), 14px);
+}
+
+// 944px
+@media all and (max-width: 59em) {
+    .footer__logo {
+        width: 140px;
+        height: 40px;
+    }
+}
+
+// 832px
+@media all and (max-width: 52em) {
+    .footer p {
+        text-align: center;
+    }
+    .footer__title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .footer__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer__contacts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 8vw;
+        width: 100%;
+    }
+    .footer__subscription {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer__nav {
+        display: none;
+    }
+}

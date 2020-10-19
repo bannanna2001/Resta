@@ -1,7 +1,7 @@
 "use strict"
 
-let form = document.querySelector('.reservation');
-let formBtn = form.querySelector('.form-btn');
+let form = document.querySelector('.reservation-form');
+let formBtn = form.querySelector('.reservation-form__btn');
 
 let nameInput = form.querySelector('#input-name');
 let nameLabel = form.querySelector('#input-name + label');
@@ -86,10 +86,10 @@ phoneInput.addEventListener('blur', (e) => {
 function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
     if (isFull) {
         let regexp1 = /^[+][0-9]{1}$/
-        let regexp2 = /^[+][0-9]{1}[(]{1}[0-9]{3}$/
-        let regexp3 = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}$/
-        let regexp4 = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}$/
-        let regexp5 = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/
+        let regexp2 = /^[+][0-9]{1}\s{1}[(]{1}[0-9]{3}$/
+        let regexp3 = /^[+][0-9]{1}\s{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}$/
+        let regexp4 = /^[+][0-9]{1}\s{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}$/
+        let regexp5 = /^[+][0-9]{1}\s{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/
 
         let curSign = phoneInput.value.slice(-1) === " " ? NaN : Number(phoneInput.value.slice(-1));
 
@@ -101,7 +101,7 @@ function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
                 phoneInput.value = phoneInput.value.slice(0, -1);
             } else {
                 if (regexp1.test(phoneInput.value)) {
-                    phoneInput.value += '(';
+                    phoneInput.value += ' (';
                 } else if (regexp2.test(phoneInput.value)) {
                     phoneInput.value += ') ';
                 } else if (regexp3.test(phoneInput.value) || regexp4.test(phoneInput.value)) {
@@ -111,8 +111,13 @@ function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
                 }
             }
         } else {
-            if (!Number.isInteger(curSign)) {
-                phoneInput.value = phoneInput.value.slice(0, -2);
+            let delSign = phonePrevValue.slice(-1);
+
+            if (!Number.isInteger(delSign)) {
+                if (delSign === ' ' || delSign === '(')
+                    phoneInput.value = phoneInput.value.slice(0, -2);
+                else if (delSign === '-')
+                    phoneInput.value = phoneInput.value.slice(0, -1);
             }
 
             if (phoneInput.value === "")
@@ -139,7 +144,7 @@ function phoneNumberValidation(phoneInput, phoneLabel, isFull = true) {
 
 function isPhoneNumberValid(number) {
     let trimName = number.trim();
-    let regexp = /^[+][0-9]{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
+    let regexp = /^[+][0-9]{1}\s{1}[(]{1}[0-9]{3}[)]{1}\s{1}[0-9]{3}[-]{1}[0-9]{2}[-]{1}[0-9]{2}$/;
     if (regexp.test(number))
         return true;
     return false;
@@ -166,10 +171,10 @@ formBtn.addEventListener('click', (e) => {
 });
 
 //--------
-let subscriptionForm = document.querySelector('.subscription-form');
-let subscriptionInput = subscriptionForm.querySelector('input');
-let subscriptionLabel = subscriptionForm.querySelector('input + label');
-let subscriptionBtn = subscriptionForm.querySelector('button');
+let subscriptionForm = document.querySelector('.footer__subscription-form');
+let subscriptionInput = subscriptionForm.querySelector('.footer__subscription-input');
+let subscriptionLabel = subscriptionForm.querySelector('.footer__subscription-input + label');
+let subscriptionBtn = subscriptionForm.querySelector('.main-btn_mini');
 
 function emailValidation(subscriptionInput, subscriptionLabel, isFull = false) {
     let regexp = /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/;
