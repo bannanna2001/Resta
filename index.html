@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -325,6 +325,28 @@
             <p>Copyright &copy;2020 All rights reserved</p>
         </div>
     </footer>
+
+    <div class="popup hidden">
+        <div class="popup__content-cantainer">
+            <div class="logo popup__logo">
+                <picture>
+                    <source srcset="img/logo.webp 1x, img/logo@2x.webp 2x" type="image/webp">
+                    <img src="img/logo.png 1x" srcset="img/logo@2x.png 2x" alt="">
+                </picture>
+            </div>
+
+            <h2 class="popup__title">Get discount 20%!</h2>
+
+            <div class="popup__text">
+                <p>Omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.</p>
+            </div>
+            <button class="main-btn popup__btn">Get the discount</button>
+
+            <div class="popup__close hidden">
+                <button class="popup__close-btn"><img src="img/close.png" alt="close button"></button>
+            </div>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

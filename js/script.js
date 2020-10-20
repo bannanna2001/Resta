@@ -224,3 +224,21 @@ subscriptionInput.addEventListener('blur', (e) => {
     e.preventDefault();
     emailValidation(subscriptionInput, subscriptionLabel);
 });
+
+//-------- Popup --------
+let popup = document.querySelector('.popup');
+let popupClose = document.querySelector('.popup__close');
+let popupCloseBtn = popupClose.querySelector('.popup__close-btn');
+
+setTimeout(() => {
+    popup.classList.remove('hidden');
+}, 2000);
+
+setTimeout(() => {
+    popupClose.classList.remove('hidden');
+}, 4000);
+
+popupCloseBtn.addEventListener('click', () => {
+    popup.classList.add('hidden');
+    popupClose.classList.add('hidden');
+})
