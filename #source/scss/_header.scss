@@ -10,6 +10,8 @@
 }
 
 .header__burger {
+    display: none;
+    width: 20px;
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
@@ -65,5 +67,8 @@
 @media all and (max-width: 42.5em) {
     .header__title {
         font-size: calc(1.2rem + .3vw);
+    }
+    .header__burger {
+        display: block;
     }
 }

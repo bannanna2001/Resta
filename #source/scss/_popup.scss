@@ -22,7 +22,7 @@
     flex-direction: column;
     align-items: center;
     color: #fff;
-    transition: all 2s;
+    transition: none 2s;
     p {
         text-align: center;
     }
@@ -40,8 +40,9 @@
 
 .popup__logo {
     width: 35%;
+    max-width: 240px;
     padding: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 4vw;
 }
 
 .popup__logo picture {
@@ -58,12 +59,14 @@
     margin-bottom: 1.2rem;
     font-weight: 800;
     font-size: 2.7rem;
+    text-align: center;
 }
 
 .popup__text {
     font-size: 1.1rem;
     color: #F2F2F2;
     margin-bottom: 2.2rem;
+    text-align: center;
 }
 
 .popup__close {
@@ -77,5 +80,26 @@
     border: none;
     img {
         width: 18px;
+    }
+}
+
+// 944px
+@media all and (max-width: 59em) {
+    .popup__title {
+        font-size: calc(18px + (40 - 18) * ((100vw - 320px) / (944 - 320)));
+    }
+    .popup__text {
+        font-size: calc(12px + (20 - 12) * ((100vw - 320px) / (944 - 320)));
+    }
+}
+
+// 680px
+@media all and (max-width: 42.5em) {
+    .popup__logo {
+        width: 25%;
+        min-width: 100px;
+    }
+    .popup__content-cantainer {
+        width: 90vw;
     }
 }

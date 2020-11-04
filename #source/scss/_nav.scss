@@ -64,8 +64,30 @@
 @media all and (max-width: 42.5em) {
     .header__nav-row {
         justify-content: center;
+        flex-wrap: wrap;
+    }
+    .nav_hidden {
+        display: none;
+    }
+    .logo_max {
+        width: 100%;
+        flex: 0 0 100%;
     }
     .nav {
-        display: none;
+        position: relative;
+        margin: 0;
+        width: 100%;
+    }
+    .nav__list {
+        position: absolute;
+        width: 100%;
+        background-color: rgb(111, 207, 151);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+    }
+    .nav__item {
+        margin-bottom: 1rem;
     }
 }
